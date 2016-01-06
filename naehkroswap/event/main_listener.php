@@ -20,20 +20,21 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
  */
 class main_listener implements EventSubscriberInterface
 {
-    static public function getSubscribedEvents()
-    {
-        return array(
-            'core.user_setup' => 'load_language_on_setup',
-        );
-    }
+  static public function getSubscribedEvents()
+  {
+    return array(
+        'core.user_setup' => 'load_language_on_setup',
+    );
+  }
 
-    public function load_language_on_setup($event)
-    {
-        $lang_set_ext = $event['lang_set_ext'];
-        $lang_set_ext[] = array(
-            'ext_name' => 'naehkromanten/naehkroswap',
-            'lang_set' => 'naehkroswap',
-        );
-        $event['lang_set_ext'] = $lang_set_ext;
-    }
+  public function load_language_on_setup($event)
+  {
+    $lang_set_ext = $event['lang_set_ext'];
+    $lang_set_ext[] = array(
+        'ext_name' => 'naehkromanten/naehkroswap',
+        'lang_set' => 'naehkroswap',
+    );
+    $event['lang_set_ext'] = $lang_set_ext;
+  }
 }
+?>

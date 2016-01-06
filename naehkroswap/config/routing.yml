@@ -1,0 +1,3 @@
+naehkromanten_naehkroswap_route:
+  path: /naehkroswap/{name}
+  defaults: { _controller: naehkromanten.naehkroswap.controller:handle }

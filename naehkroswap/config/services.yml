@@ -1,5 +1,12 @@
 services:
-    naehkromanten.naehkroswap.listener:       # name of the service you want to register
-        class: naehkromanten\naehkroswap\event\main_listener
-        tags:
-            - { name: event.listener }
+  naehkromanten.naehkroswap.controller:
+      class: naehkromanten\naehkroswap\controller\main
+      arguments:
+          - @config
+          - @controller.helper
+          - @template
+          - @user
+  naehkromanten.naehkroswap.listener:       # name of the service you want to register
+      class: naehkromanten\naehkroswap\event\main_listener
+      tags:
+          - { name: event.listener }
